@@ -1,9 +1,31 @@
 import '../index.css';
 import photohero from '../assets/images/ChatGPT Image Jun 2, 2026, 04_41_26 PM-Photoroom2.png';
+import { useState ,useEffect } from 'react';
+
 
 export default function HeroSection() {
+
+
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+
+            if (window.scrollY > window.innerHeight * 0.2) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    },[])
     return (
-        <section className="relative min-h-screen bg-[#0A0A0A] flex items-center justify-center w-full overflow-hidden pt-20">
+        <section className={`relative min-h-screen bg-[#0A0A0A] flex items-center justify-center w-full overflow-hidden pt-20 transition-all duration-700 ease-in-out ${
+            isScrolled ? 'blur-md opacity-50' : 'blur-0 opacity-100'
+        }`}
+        id="home"
+        >
 
             {/* =========================================
                 LES 3 COUCHES CENTRALES (L'effet 3D)
@@ -64,7 +86,7 @@ export default function HeroSection() {
                     {/* Partie Haute : Description technique */}
                     <div className="border-l-2 border-[#c15525] pl-4 max-w-[280px] text-left mt-30">
                         <p className="text-neutral-300 text-sm leading-relaxed">
-                            Étudiant en informatique & développeur Full-Stack. Passioné de nouvelles technologies.
+                            Computer Science student & Full-Stack Developer. Tech enthusiast.
                         </p>
                     </div>
 
@@ -72,18 +94,18 @@ export default function HeroSection() {
                     <div className="max-w-[300px] flex flex-col items-end gap-4 mt-auto">
                         <div>
                             <h3 className="text-lg font-bold text-[#c15525] mb-1">
-                                Salut, je suis Emeraude.
+                                Hi, I'm Emeraude.
                             </h3>
                             <p className="text-neutral-400 text-sm leading-relaxed">
-                                Je conçois des solutions SaaS et des expériences web d'exception.
+                                I design SaaS solutions and <br/> exceptional web experiences.
                             </p>
                         </div>
 
                         <a
                             href="/cv.pdf"
-                            className="group flex items-center gap-4 bg-[#8a3b18] hover:bg-[#c15525] text-white px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 border border-white/10 shadow-lg mt-2"
+                            className="group flex items-center gap-4 bg-[#8a3b18] hover:bg-[#c15525] text-white px-6 py-2.5 rounded-full font-bold text-1xl transition-all duration-300 border border-white/10 shadow-lg mt-2"
                         >
-                            Télécharger CV
+                            Resume
                             <div className="bg-white text-[#8a3b18] w-7 h-7 rounded-full flex items-center justify-center group-hover:-rotate-45 transition-transform duration-300">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M5 12h14"></path>

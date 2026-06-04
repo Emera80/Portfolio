@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-
+html{
+    scroll-behavior: smooth;
+}
 /* Le fichier pour les textes normaux */
 @font-face {
     font-family: 'Satoshi';

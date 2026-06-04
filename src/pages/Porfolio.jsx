@@ -1,6 +1,6 @@
 //import React from "react";
 import "../index.css"
-// import About from "../components/AboutSection";
+import About from "../components/AboutSection";
 // import Projects from "../components/ProjectSection";
 // import Contact from "../components/ContactSection";
 import Navbar from "../components/Navbar";
@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar";
 // import Education from "../components/EducationSection";
 import Hero from "../components/HeroSection";
 import {useEffect} from "react";
+import {Link} from "react-router-dom";
 // import Footer from "../components/Footer";
 // import Skills from "../components/SkillSection";
 
@@ -29,12 +30,13 @@ export default function Porfolio() {
         }
     }, [location]);
 
+
     return (
         <div>
             <Navbar/>
             <main className="main">
                 <Hero/>
-            {/*    <About/>*/}
+                <About/>
             {/*    <Skills/>*/}
             {/*    <Projects/>*/}
             {/*    <Education/>*/}
