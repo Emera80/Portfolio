@@ -10,7 +10,7 @@ import Hero from "../components/HeroSection";
 import {useEffect} from "react";
 import {Link} from "react-router-dom";
 // import Footer from "../components/Footer";
-// import Skills from "../components/SkillSection";
+import Skills from "../components/SkillSection";
 
 
 export default function Porfolio() {
@@ -37,7 +37,7 @@ export default function Porfolio() {
             <main className="main">
                 <Hero/>
                 <About/>
-            {/*    <Skills/>*/}
+                <Skills/>
             {/*    <Projects/>*/}
             {/*    <Education/>*/}
             {/*    <Achievements/>*/}

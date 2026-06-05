@@ -72,9 +72,10 @@ export default function Navbar() {
 
                 {/* Logo ET */}
                 <div className="flex items-center gap-2">
-                    <Link to="/" className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center font-black text-white text-lg hover:scale-105 transition-transform duration-300">
+                    <a href="/#home"  className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center font-black text-white text-lg hover:scale-105 transition-transform duration-300">
                         ET
-                    </Link>
+                    </a>
+
                 </div>
 
                 {/* Navigation */}

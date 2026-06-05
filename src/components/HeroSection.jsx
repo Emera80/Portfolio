@@ -1,6 +1,7 @@
 import '../index.css';
 import photohero from '../assets/images/ChatGPT Image Jun 2, 2026, 04_41_26 PM-Photoroom2.png';
 import { useState ,useEffect } from 'react';
+import {motion} from 'framer-motion';
 
 
 export default function HeroSection() {
@@ -101,7 +102,9 @@ export default function HeroSection() {
                             </p>
                         </div>
 
-                        <a
+                        <motion.a
+                            whileHover={{ scale: 1.05 }} // Grossit de 5% au survol
+                            whileTap={{ scale: 0.95 }}   // Rétrécit un peu au clic (effet bouton physique)
                             href="/cv.pdf"
                             className="group flex items-center gap-4 bg-[#8a3b18] hover:bg-[#c15525] text-white px-6 py-2.5 rounded-full font-bold text-1xl transition-all duration-300 border border-white/10 shadow-lg mt-2"
                         >
@@ -112,7 +115,7 @@ export default function HeroSection() {
                                     <path d="m12 5 7 7-7 7"></path>
                                 </svg>
                             </div>
-                        </a>
+                        </motion.a>
                     </div>
                 </div>
             </div>
