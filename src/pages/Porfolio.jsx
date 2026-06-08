@@ -7,8 +7,7 @@ import Navbar from "../components/Navbar";
 import Achievements from "../components/AchievementSection";
 import Hero from "../components/HeroSection";
 import {useEffect} from "react";
-import {Link} from "react-router-dom";
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 import Skills from "../components/SkillSection";
 
 
@@ -40,7 +39,7 @@ export default function Porfolio() {
                 <Projects/>
                 <Achievements/>
                 <Contact/>
-            {/*    <Footer/>*/}
+                <Footer/>
             </main>
         </div>
     )
