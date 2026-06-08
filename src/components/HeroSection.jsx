@@ -22,7 +22,7 @@ export default function HeroSection() {
         return () => window.removeEventListener('scroll', handleScroll);
     },[])
     return (
-        <section className={`relative min-h-screen bg-[#0A0A0A] flex items-center justify-center w-full overflow-hidden pt-20 transition-all duration-700 ease-in-out ${
+        <section className={`relative min-h-screen dark:bg-[#0A0A0A] light:bg-[#ffffff] flex items-center justify-center w-full overflow-hidden pt-20 transition-all duration-700 ease-in-out ${
             isScrolled ? 'blur-md opacity-50' : 'blur-0 opacity-100'
         }`}
         id="home"
@@ -35,7 +35,7 @@ export default function HeroSection() {
             {/* COUCHE 1 : Texte plein (Derrière la photo) */}
             {/* Ajustements : top-[62%] (plus bas) et text-[11vw] (plus petit) */}
             <div className="absolute top-[62%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none">
-                <h1 className="text-[15vw] md:text-[11vw] font-black tracking-wide text-white uppercase leading-none">
+                <h1 className="text-[15vw] md:text-[11vw] font-black tracking-wide dark:text-white light:text-neutral-100 uppercase leading-none">
                     EMERAUDE
                 </h1>
             </div>
@@ -47,14 +47,14 @@ export default function HeroSection() {
                     alt="Photo de profil"
                     className="h-full object-contain object-bottom select-none drop-shadow-2xl"
                 />
-                <div className="absolute inset-0 pointer-events-none z-10 bg-[radial-gradient(ellipse_at_center,transparent_55%,#0A0A0A_100%)]"></div>
-                <div className="absolute bottom-0 left-0 w-full h-1/3 pointer-events-none z-10 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A/80] to-transparent"></div>
+                <div className="absolute inset-0 pointer-events-none z-10 dark:bg-[radial-gradient(ellipse_at_center,transparent_55%,#0A0A0A_100%)] light:bg-[radial-gradient(ellipse_at_center,transparent_55%,#ffffff_100%)]"></div>
+                <div className="absolute bottom-0 left-0 w-full h-1/3 pointer-events-none z-10 dark:bg-gradient-to-t dark:from-[#0A0A0A] light:bg-gradient-to-t light:from-[#ffffff] via-transparent to-transparent"></div>
             </div>
 
             {/* COUCHE 3 : Texte Contour (Devant la photo) */}
             {/* Doit avoir EXACTEMENT les mêmes ajustements que la Couche 1 */}
             <div className="absolute top-[62%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-20 pointer-events-none">
-                <h1 className="text-[15vw] md:text-[11vw] font-black tracking-wide text-transparent uppercase leading-none [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:2px_white]">
+                <h1 className="text-[15vw] md:text-[11vw] font-black tracking-wide text-transparent uppercase leading-none dark:[-webkit-text-stroke:1px_white] md:dark:[-webkit-text-stroke:2px_white] light:[-webkit-text-stroke:1px_black] md:light:[-webkit-text-stroke:2px_black] opacity-20">
                     EMERAUDE
                 </h1>
             </div>
@@ -67,7 +67,7 @@ export default function HeroSection() {
 
                 {/* BLOC DE GAUCHE */}
                 <div className="pointer-events-auto flex flex-col items-center md:items-start gap-4 justify-center h-auto md:h-full md:translate-y-[-20%] md:translate-x-[9%] mt-10 md:mt-0 text-center md:text-left">
-                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white leading-tight">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold dark:text-white light:text-black leading-tight">
                         Front-<span className="text-[#c15525]">End</span> & <br className="hidden md:block" />
                         Back-<span className="text-[#c15525]">End</span> <br className="hidden md:block" />
                         Developer
@@ -97,7 +97,7 @@ export default function HeroSection() {
 
                     {/* Partie Haute : Description technique */}
                     <div className="border-l-2 border-[#c15525] pl-4 max-w-[280px] text-left mt-30">
-                        <p className="text-neutral-300 text-sm leading-relaxed">
+                        <p className="dark:text-neutral-300 light:text-neutral-700 text-sm leading-relaxed">
                             Computer Science student & Full-Stack Developer. Tech enthusiast.
                         </p>
                     </div>
@@ -108,7 +108,7 @@ export default function HeroSection() {
                             <h3 className="text-lg font-bold text-[#c15525] mb-1">
                                 Hi, I'm Emeraude.
                             </h3>
-                            <p className="text-neutral-400 text-sm leading-relaxed">
+                            <p className="dark:text-neutral-400 light:text-neutral-600 text-sm leading-relaxed">
                                 I design SaaS solutions and <br/> exceptional web experiences.
                             </p>
                         </div>

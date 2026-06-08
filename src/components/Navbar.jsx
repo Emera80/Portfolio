@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import {motion} from 'framer-motion';
+import { useTheme } from '../context/ThemeContext';
+import { FiSun, FiMoon } from 'react-icons/fi';
 export default function Navbar() {
     //const [isScrolled, setIsScrolled] = useState(false);
 
@@ -65,9 +67,11 @@ export default function Navbar() {
         { name: 'Contact', path: '#contact' },
     ];
 
+    const { theme, toggleTheme } = useTheme();
+
     return (
         <div className="fixed top-0 left-0 w-full z-[100] px-4 md:px-8 py-6">
-            <header className="max-w-7xl mx-auto flex justify-between items-center backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-6 md:px-8 py-3 transition-all duration-500">
+            <header className="max-w-7xl mx-auto flex justify-between items-center backdrop-blur-md bg-white/5 dark:bg-white/5 light:bg-black/5 border border-white/10 dark:border-white/10 light:border-black/10 rounded-full px-6 md:px-8 py-3 transition-all duration-500">
 
                 {/* Logo ET */}
                 <div className="flex items-center gap-2">
@@ -93,7 +97,7 @@ export default function Navbar() {
                                         className={`px-4 py-2 rounded-full hover:text-black hover:bg-orange-500 transition-all duration-300 ease-in-out ${
                                             isActive
                                                 ? 'font-bold text-orange-500'
-                                                : 'font-medium text-white/70'
+                                                : 'font-medium dark:text-white/70 light:text-black/70'
                                         }`}
 
                                     >
@@ -104,22 +108,36 @@ export default function Navbar() {
                     </ul>
                 </nav>
 
-                {/* Bouton Menu Minimaliste */}
-                <button
-                    onClick={toggleMenu}
-                    className="w-10 h-10 rounded-full lg:hidden focus:outline-none bg-white/10 border border-white/20 flex flex-col items-center justify-center gap-[6px] hover:bg-white/20 transition-all duration-300 group overflow-hidden"
-                >
-                    <motion.span
-                        animate={isOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="w-5 h-[1.5px] bg-white group-hover:bg-orange-500"
-                    />
-                    <motion.span
-                        animate={isOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="w-5 h-[1.5px] bg-white group-hover:bg-orange-500"
-                    />
-                </button>
+                {/* Bouton Theme Toggle & Menu Minimaliste */}
+                <div className="flex items-center gap-4">
+                    <button
+                        onClick={toggleTheme}
+                        className="w-10 h-10 rounded-full bg-white/10 dark:bg-white/10 light:bg-black/10 border border-white/20 dark:border-white/20 light:border-black/20 flex items-center justify-center hover:bg-orange-500 transition-all duration-300 group"
+                        title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+                    >
+                        {theme === 'dark' ? (
+                            <FiSun className="text-white group-hover:text-black" size={20} />
+                        ) : (
+                            <FiMoon className="text-black group-hover:text-white" size={20} />
+                        )}
+                    </button>
+
+                    <button
+                        onClick={toggleMenu}
+                        className="w-10 h-10 rounded-full lg:hidden focus:outline-none bg-white/10 dark:bg-white/10 light:bg-black/10 border border-white/20 dark:border-white/20 light:border-black/20 flex flex-col items-center justify-center gap-[6px] hover:bg-white/20 transition-all duration-300 group overflow-hidden"
+                    >
+                        <motion.span
+                            animate={isOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="w-5 h-[1.5px] dark:bg-white light:bg-black group-hover:bg-orange-500"
+                        />
+                        <motion.span
+                            animate={isOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="w-5 h-[1.5px] dark:bg-white light:bg-black group-hover:bg-orange-500"
+                        />
+                    </button>
+                </div>
 
             </header>
             {/* 2. LE VOILE SOMBRE (Backdrop) */}
@@ -132,12 +150,12 @@ export default function Navbar() {
             )}
             {/* 2. LE PANNEAU LATÉRAL MOBILE */}
             <div
-                className={`fixed top-0 right-0 h-screen w-64 bg-[#111111] border-l border-neutral-800/60 p-8 shadow-2xl transform transition-transform duration-300 ease-in-out z-40 pointer-events-auto lg:hidden ${
+                className={`fixed top-0 right-0 h-screen w-64 dark:bg-[#111111] light:bg-[#eeeeee] border-l dark:border-neutral-800/60 light:border-neutral-300/60 p-8 shadow-2xl transform transition-transform duration-300 ease-in-out z-40 pointer-events-auto lg:hidden ${
                     isOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}
             >
                 {/* Liens du menu mobile */}
-                <ul className="flex flex-col gap-8 mt-20 text-lg font-medium text-white">
+                <ul className="flex flex-col gap-8 mt-20 text-lg font-medium dark:text-white light:text-black">
                     {navLinks.map((link, index) => {
                         const sectionId = link.path.replace('#', '');
                         const isActive = ActiveLink === sectionId;

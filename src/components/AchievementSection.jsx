@@ -31,8 +31,8 @@ export default function AchievementSection() {
     ]
 
     return (
-        <section id="awards" className="min-h-screen scroll-mt-20 bg-[#0A0A0A] flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-40 pt-20 lg:pt-30 w-full overflow-visible px-6 lg:px-0">
-            <div className=" bloc1 hidden lg:flex flex-col items-center justify-center  text-8xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
+        <section id="awards" className="min-h-screen scroll-mt-20 dark:bg-[#0A0A0A] light:bg-[#ffffff] flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-40 pt-20 lg:pt-30 w-full overflow-visible px-6 lg:px-0">
+            <div className=" bloc1 hidden lg:flex flex-col items-center justify-center  text-8xl font-bold dark:text-neutral-900 light:text-neutral-100 uppercase tracking-normal w-[10%]">
                 {word.split("").map((letter, index) => (
                     <span key={index} className="-rotate-90 inline-block hover:text-[#c15525] transition-all duration-300 ease-in-out ">{letter}</span>
                 ))}
@@ -42,11 +42,11 @@ export default function AchievementSection() {
                     <div className=" box1-2 lg:translate-y-[-40%] ">
                         <div className="flex flex-col md:flex-row gap-5">
                             <div className=" bloc1-2-1 hidden md:block">
-                                <h1 className="text-7xl font-bold text-neutral-900 uppercase tracking-wide">04</h1>
+                                <h1 className="text-7xl font-bold dark:text-neutral-900 light:text-neutral-100 uppercase tracking-wide">04</h1>
                             </div>
                             <div>
-                                <h2 className="text-[11px] md:text-[13px] translate-y-[-15%] tracking-[0.1rem] font-bold text-white border-2 border-solid border-[#c15525] inline-block px-3 py-1 uppercase mb-4 md:mb-0">Awards & Certifications</h2>
-                                <p className="text-white font-black text-4xl md:text-7xl uppercase leading-tight">PROOF OF MY PASSION BEYOND<br className="hidden md:block" /> THE <span className="text-[#c15525]">CLASSROOM</span></p>
+                                <h2 className="text-[11px] md:text-[13px] translate-y-[-15%] tracking-[0.1rem] font-bold dark:text-white light:text-black border-2 border-solid border-[#c15525] inline-block px-3 py-1 uppercase mb-4 md:mb-0">Awards & Certifications</h2>
+                                <p className="dark:text-white light:text-black font-black text-4xl md:text-7xl uppercase leading-tight">PROOF OF MY PASSION BEYOND<br className="hidden md:block" /> THE <span className="text-[#c15525]">CLASSROOM</span></p>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ export default function AchievementSection() {
                         {/* =========================================
               LA LIGNE DE FOND (Gris clair / Transparente)
               ========================================= */}
-                        <div className="absolute left-[15px] md:left-[23px] top-0 bottom-0 w-1 bg-white/10 rounded-full"></div>
+                        <div className="absolute left-[15px] md:left-[23px] top-0 bottom-0 w-1 dark:bg-white/10 light:bg-black/10 rounded-full"></div>
 
                         {/* =========================================
               LA LIGNE ANIMÉE (Orange qui se remplit)
@@ -76,7 +76,7 @@ export default function AchievementSection() {
                                 <div key={item.id} className="relative pl-12 md:pl-24">
 
                                     {/* Le petit point (cercle) sur la ligne */}
-                                    <div className="absolute left-[11px] md:left-[19px] top-6 h-3 w-3 bg-[#0A0A0A] border-2 border-[#c15525] rounded-full z-10"></div>
+                                    <div className="absolute left-[11px] md:left-[19px] top-6 h-3 w-3 dark:bg-[#0A0A0A] light:bg-[#ffffff] border-2 border-[#c15525] rounded-full z-10"></div>
 
                                     {/* La Carte d'accomplissement */}
                                     <motion.div
@@ -86,14 +86,14 @@ export default function AchievementSection() {
                                         transition={{ duration: 0.6, delay: 0.1 }}
                                         viewport={{ once: true, margin: "-50px" }}
 
-                                        className="bg-[#111111] border border-white/10 rounded-2xl p-6 md:p-8 hover:border-white/30 hover:bg-white/5 transition-all duration-300 group"
+                                        className="dark:bg-[#111111] light:bg-[#f3f4f6] border dark:border-white/10 light:border-black/10 rounded-2xl p-6 md:p-8 dark:hover:border-white/30 light:hover:border-black/30 dark:hover:bg-white/5 light:hover:bg-black/5 transition-all duration-300 group"
                                     >
                                         {/* En-tête de la carte : Titre + Date */}
                                         <div className="flex flex-col md:flex-row md:items-center justify-between mb-2 gap-4">
-                                            <h3 className="text-2xl font-bold text-white group-hover:text-[#c15525] transition-colors">
+                                            <h3 className="text-2xl font-bold dark:text-white light:text-black group-hover:text-[#c15525] transition-colors">
                                                 {item.title}
                                             </h3>
-                                            <span className="text-sm font-mono text-neutral-400 bg-white/5 px-4 py-1.5 rounded-full whitespace-nowrap border border-white/5">{item.date}</span>
+                                            <span className="text-sm font-mono dark:text-neutral-400 light:text-neutral-600 dark:bg-white/5 light:bg-black/5 px-4 py-1.5 rounded-full whitespace-nowrap border dark:border-white/5 light:border-black/5">{item.date}</span>
                                         </div>
 
                                         {/* Projet / Contexte */}
@@ -102,7 +102,7 @@ export default function AchievementSection() {
                                         </h4>
 
                                         {/* Description */}
-                                        <p className="text-neutral-400 leading-relaxed text-sm md:text-base">
+                                        <p className="dark:text-neutral-400 light:text-neutral-600 leading-relaxed text-sm md:text-base">
                                             {item.description}
                                         </p>
                                     </motion.div>

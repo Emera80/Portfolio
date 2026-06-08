@@ -59,17 +59,17 @@ export default function SkillSection() {
         ],
         tools: [
             { name: "Git", icon: <SiGit color="#F05032" /> },
-            { name: "GitHub", icon: <SiGithub color="#FFFFFF" /> },
+            { name: "GitHub", icon: <SiGithub className="dark:text-white light:text-black" /> },
             { name: "Render", icon: <SiRender color="#46E3B7" /> },
-            { name: "Vercel", icon: <SiVercel color="#FFFFFF" /> },
+            { name: "Vercel", icon: <SiVercel className="dark:text-white light:text-black" /> },
             { name: "Upstash", icon: <SiUpstash color="#00E9A3" /> },
             { name: "VSCode", icon: <VscVscode color="#007ACC" /> },
-            { name: "JetBrains", icon: <SiJetbrains color="#000000" /> }, // ou #FFFFFF selon votre fond
+            { name: "JetBrains", icon: <SiJetbrains className="dark:text-white light:text-black" /> }, // ou #FFFFFF selon votre fond
         ]
     };
     return (
-        <section id="skills" className="min-h-screen scroll-mt-10 bg-[#0A0A0A] flex flex-col lg:flex-row items-center justify-center w-full overflow-visible gap-10 lg:gap-40 px-6 lg:px-0 pt-20 lg:pt-0">
-            <div className=" bloc1 hidden lg:flex flex-col items-center justify-center text-8xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
+        <section id="skills" className="min-h-screen scroll-mt-10 dark:bg-[#0A0A0A] light:bg-[#ffffff] flex flex-col lg:flex-row items-center justify-center w-full overflow-visible gap-10 lg:gap-40 px-6 lg:px-0 pt-20 lg:pt-0">
+            <div className=" bloc1 hidden lg:flex flex-col items-center justify-center text-8xl font-bold dark:text-neutral-900 light:text-neutral-100 uppercase tracking-normal w-[10%]">
                 {word.split("").map((letter, index) => (
                     <span key={index} className="-rotate-90 inline-block hover:text-[#c15525] transition-all duration-300 ease-in-out ">{letter}</span>
                 ))}
@@ -79,11 +79,11 @@ export default function SkillSection() {
                     <div className=" bloc2-11 mb-10 lg:mb-40  ">
                         <div className="flex flex-col md:flex-row gap-5">
                             <div className=" bloc1-2-1 hidden md:block">
-                                <h1 className="text-7xl font-bold text-neutral-900 uppercase tracking-wide">02</h1>
+                                <h1 className="text-7xl font-bold dark:text-neutral-900 light:text-neutral-100 uppercase tracking-wide">02</h1>
                             </div>
                             <div>
-                                <h2 className="text-[11px] md:text-[13px] translate-y-[-15%] tracking-[0.1rem] font-bold text-white border-2 border-solid border-[#c15525] inline-block px-3 py-1 uppercase mb-4 md:mb-0">Skills</h2>
-                                <p className="text-white font-black text-4xl md:text-7xl uppercase leading-tight">TECHNOLOGIES I  <span className="text-[#c15525]">WORK<br className="hidden md:block" /></span> WITH</p>
+                                <h2 className="text-[11px] md:text-[13px] translate-y-[-15%] tracking-[0.1rem] font-bold dark:text-white light:text-black border-2 border-solid border-[#c15525] inline-block px-3 py-1 uppercase mb-4 md:mb-0">Skills</h2>
+                                <p className="dark:text-white light:text-black font-black text-4xl md:text-7xl uppercase leading-tight">TECHNOLOGIES I  <span className="text-[#c15525]">WORK<br className="hidden md:block" /></span> WITH</p>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@ export default function SkillSection() {
                             <button key={cat} onClick={() => setActiveCategory(cat)} className={`whitespace-nowrap lg:w-full text-left px-4 lg:px-6 py-2 lg:py-4 font-bold tracking-widest uppercase transition-all duration-300 border-b-2 lg:border-b-0 lg:border-l-2 ${
                                 activeCategory === cat
                                     ? 'text-orange-500 border-orange-500 bg-gradient-to-r from-orange-500/10 to-transparent'
-                                    : 'text-neutral-500 border-transparent hover:text-white hover:border-white/20'
+                                    : 'dark:text-neutral-500 light:text-neutral-400 border-transparent dark:hover:text-white light:hover:text-black hover:border-black/20'
                             }`}>{cat}</button>
                         ))}
                     </div>
@@ -130,7 +130,7 @@ export default function SkillSection() {
                                         whileHover={{ y: -5, scale: 1.02 }}
 
                                         // Le design de la carte
-                                        className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/30 hover:bg-white/10 transition-colors"
+                                        className="flex items-center gap-4 p-4 rounded-xl dark:bg-white/5 light:bg-black/5 border dark:border-white/10 light:border-black/10 dark:hover:border-white/30 light:hover:border-black/30 dark:hover:bg-white/10 light:hover:bg-black/10 transition-colors"
                                     >
                                         {/* L'icône (la taille se gère ici avec text-...) */}
                                         <div className="text-3xl drop-shadow-lg">
@@ -138,7 +138,7 @@ export default function SkillSection() {
                                         </div>
 
                                         {/* Le nom de la technologie */}
-                                        <div className="text-white font-bold text-lg">
+                                        <div className="dark:text-white light:text-black font-bold text-lg">
                                             {skill.name}
                                         </div>
 

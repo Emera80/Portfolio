@@ -82,8 +82,8 @@ export default function ProjectSection() {
 
     return (
 
-        <section id="projects" className="min-h-screen scroll-mt-20 lg:scroll-mt-45 bg-[#0A0A0A] flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-40 w-full overflow-visible px-6 lg:px-0 pt-20 lg:pt-0">
-            <div className=" bloc1 hidden lg:flex flex-col items-center justify-center text-8xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
+        <section id="projects" className="min-h-screen scroll-mt-20 lg:scroll-mt-45 dark:bg-[#0A0A0A] light:bg-[#ffffff] flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-40 w-full overflow-visible px-6 lg:px-0 pt-20 lg:pt-0">
+            <div className=" bloc1 hidden lg:flex flex-col items-center justify-center text-8xl font-bold dark:text-neutral-900 light:text-neutral-100 uppercase tracking-normal w-[10%]">
                 {word.split("").map((letter, index) => (
                     <span key={index} className="-rotate-90 inline-block hover:text-[#c15525] transition-all duration-300 ease-in-out ">{letter}</span>
                 ))}
@@ -93,11 +93,11 @@ export default function ProjectSection() {
                     <div className=" box1-2 lg:translate-y-[-40%] ">
                         <div className="flex flex-col md:flex-row gap-5">
                             <div className=" bloc1-2-1 hidden md:block">
-                                <h1 className="text-7xl font-bold text-neutral-900 uppercase tracking-wide">03</h1>
+                                <h1 className="text-7xl font-bold dark:text-neutral-900 light:text-neutral-100 uppercase tracking-wide">03</h1>
                             </div>
                             <div>
-                                <h2 className="text-[11px] md:text-[13px] translate-y-[-15%] tracking-[0.1rem] font-bold text-white border-2 border-solid border-[#c15525] inline-block px-3 py-1 uppercase mb-4 md:mb-0">Projects</h2>
-                                <p className="text-white font-black text-4xl md:text-7xl uppercase leading-tight">A SMALL SET OF THINGS I'M<br className="hidden md:block" /> <span className="text-[#c15525]">PROUD </span>TO HAVE BUILT</p>
+                                <h2 className="text-[11px] md:text-[13px] translate-y-[-15%] tracking-[0.1rem] font-bold dark:text-white light:text-black border-2 border-solid border-[#c15525] inline-block px-3 py-1 uppercase mb-4 md:mb-0">Projects</h2>
+                                <p className="dark:text-white light:text-black font-black text-4xl md:text-7xl uppercase leading-tight">A SMALL SET OF THINGS I'M<br className="hidden md:block" /> <span className="text-[#c15525]">PROUD </span>TO HAVE BUILT</p>
                             </div>
                         </div>
                     </div>
@@ -111,10 +111,10 @@ export default function ProjectSection() {
 
                         {/* Boutons Gauche / Droite - Masqués sur mobile car on peut swipe */}
                         <div className="hidden md:flex gap-4">
-                            <button onClick={() => scroll('left')} className="p-3 rounded-full bg-white/5 border border-white/10 hover:bg-orange-500 hover:text-white transition-all text-neutral-400">
+                            <button onClick={() => scroll('left')} className="p-3 rounded-full dark:bg-white/5 light:bg-black/5 border dark:border-white/10 light:border-black/10 hover:bg-orange-500 hover:text-white transition-all dark:text-neutral-400 light:text-neutral-600">
                                 <FiChevronLeft size={24} />
                             </button>
-                            <button onClick={() => scroll('right')} className="p-3 rounded-full bg-white/5 border border-white/10 hover:bg-orange-500 hover:text-white transition-all text-neutral-400">
+                            <button onClick={() => scroll('right')} className="p-3 rounded-full dark:bg-white/5 light:bg-black/5 border dark:border-white/10 light:border-black/10 hover:bg-orange-500 hover:text-white transition-all dark:text-neutral-400 light:text-neutral-600">
                                 <FiChevronRight size={24} />
                             </button>
                         </div>
@@ -130,7 +130,7 @@ export default function ProjectSection() {
                             <div
                                 key={project.id}
                                 // min-w force la largeur de la carte. On utilise la classe "group" pour déclencher le hover
-                                className="group relative flex-none w-[85vw] md:w-[450px] snap-center bg-[#111111] rounded-2xl border border-white/10 overflow-hidden hover:border-white/30 transition-colors duration-500"
+                                className="group relative flex-none w-[85vw] md:w-[450px] snap-center dark:bg-[#111111] light:bg-[#f3f4f6] rounded-2xl border dark:border-white/10 light:border-black/10 overflow-hidden dark:hover:border-white/30 light:hover:border-black/30 transition-colors duration-500"
                             >
 
                                 {/* IMAGE DU PROJET */}
@@ -142,7 +142,7 @@ export default function ProjectSection() {
                                         className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                     />
                                     {/* Dégradé noir en bas de l'image pour que le texte soit lisible */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent"></div>
+                                    <div className="absolute inset-0 dark:bg-gradient-to-t dark:from-[#111111] light:bg-gradient-to-t light:from-[#f3f4f6] via-transparent to-transparent"></div>
                                 </div>
 
                                 {/* CONTENU DE LA CARTE */}
@@ -150,11 +150,11 @@ export default function ProjectSection() {
                 <span className="text-orange-500 text-xs font-bold tracking-widest uppercase mb-2 block">
                   {project.category}
                 </span>
-                                    <h3 className="text-2xl font-black text-white mb-3 uppercase tracking-wide">
+                                    <h3 className="text-2xl font-black dark:text-white light:text-black mb-3 uppercase tracking-wide">
                                         {project.title}
                                     </h3>
 
-                                    <p className="text-neutral-400 text-sm mb-4">
+                                    <p className="dark:text-neutral-400 light:text-neutral-600 text-sm mb-4">
                                         {project.shortDesc}
                                     </p>
 
@@ -163,7 +163,7 @@ export default function ProjectSection() {
                                     <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">
                                         <ul className="mb-6 space-y-2">
                                             {project.details.map((detail, i) => (
-                                                <li key={i} className="text-sm text-neutral-300 flex items-start gap-2">
+                                                <li key={i} className="text-sm dark:text-neutral-300 light:text-neutral-700 flex items-start gap-2">
                                                     <span className="text-orange-500 mt-1">✓</span>
                                                     {detail}
                                                 </li>
@@ -174,16 +174,16 @@ export default function ProjectSection() {
                                     {/* LES TAGS */}
                                     <div className="flex flex-wrap gap-2 mb-6">
                                         {project.tech.map((tech, i) => (
-                                            <span key={i} className="px-3 py-1 text-xs font-medium text-neutral-300 bg-white/5 border border-white/10 rounded-sm">{tech}</span>
+                                            <span key={i} className="px-3 py-1 text-xs font-medium dark:text-neutral-300 light:text-neutral-700 dark:bg-white/5 light:bg-black/5 border dark:border-white/10 light:border-black/10 rounded-sm">{tech}</span>
                                         ))}
                                     </div>
 
                                     {/* LES BOUTONS GITHUB & LIVE (Comme sur votre image) */}
-                                    <div className="flex justify-end gap-3 pt-4 border-t border-white/10">
-                                        <a href={project.github} target="_blank" rel="noreferrer" className="p-2 border border-white/10 rounded-md text-neutral-400 hover:text-white hover:bg-white/10 transition-colors">
+                                    <div className="flex justify-end gap-3 pt-4 border-t dark:border-white/10 light:border-black/10">
+                                        <a href={project.github} target="_blank" rel="noreferrer" className="p-2 border dark:border-white/10 light:border-black/10 rounded-md dark:text-neutral-400 light:text-neutral-600 dark:hover:text-white light:hover:text-black dark:hover:bg-white/10 light:hover:bg-black/10 transition-colors">
                                             <FiGithub size={20} />
                                         </a>
-                                        <a href={project.live} target="_blank" rel="noreferrer" className="p-2 border border-white/10 rounded-md text-neutral-400 hover:text-white hover:bg-white/10 transition-colors">
+                                        <a href={project.live} target="_blank" rel="noreferrer" className="p-2 border dark:border-white/10 light:border-black/10 rounded-md dark:text-neutral-400 light:text-neutral-600 dark:hover:text-white light:hover:text-black dark:hover:bg-white/10 light:hover:bg-black/10 transition-colors">
                                             <FiExternalLink size={20} />
                                         </a>
                                     </div>
