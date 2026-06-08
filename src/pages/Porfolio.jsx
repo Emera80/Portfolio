@@ -4,8 +4,7 @@ import About from "../components/AboutSection";
 import Projects from "../components/ProjectSection";
 // import Contact from "../components/ContactSection";
 import Navbar from "../components/Navbar";
-// import Achievements from "../components/AchievementSection";
-// import Education from "../components/EducationSection";
+import Achievements from "../components/AchievementSection";
 import Hero from "../components/HeroSection";
 import {useEffect} from "react";
 import {Link} from "react-router-dom";
@@ -39,8 +38,7 @@ export default function Porfolio() {
                 <About/>
                 <Skills/>
                 <Projects/>
-            {/*    <Education/>*/}
-            {/*    <Achievements/>*/}
+                <Achievements/>
             {/*    <Contact/>*/}
             {/*    <Footer/>*/}
             </main>

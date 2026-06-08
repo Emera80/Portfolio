@@ -16,7 +16,7 @@ export default function AboutSection() {
             id="about"
             className="relative min-h-screen bg-[#0A0A0A] flex items-center w-full overflow-visible pt-30 gap-40"
             >
-            <div className=" bloc1-1 flex flex-col items-center justify-center  text-9xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
+            <div className=" bloc1-1 flex flex-col items-center justify-center  text-8xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
                 {word.split("").map((letter, index) => (
                     <span key={index} className="-rotate-90 inline-block hover:text-[#c15525] transition-all duration-300 ease-in-out ">{letter}</span>
                 ))}

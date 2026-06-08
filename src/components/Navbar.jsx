@@ -61,8 +61,7 @@ export default function Navbar() {
         { name: 'About', path: '#about' },
         { name: 'Skills', path: '#skills' },
         { name: 'Projects', path: '#projects' },
-        { name: 'Education', path: '#education' },
-        { name: 'Achievements', path: '#achievements' },
+        { name: 'AWARDS & CERTIFICATIONS', path: '#awards' },
         { name: 'Contact', path: '#contact' },
     ];
 

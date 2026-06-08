@@ -29,7 +29,7 @@ export default function ProjectSection() {
                 "Integrated Upstash Redis for high-speed serverless cart management",
                 "Implemented secure end-to-end payments using Stripe and PostgreSQL on Supabase"
             ],
-            tech: ["React", "Django REST", "Supabase", "Redis", "Stripe"],
+            tech: ["React", "Django REST", "Supabase", "Redis", "Stripe", "Render", "Vercel", "Upstash"],
             github: "https://github.com/Emera80/foodmarket",
             live: "https://foodmarket-frontend.vercel.app/"
         },
@@ -44,7 +44,7 @@ export default function ProjectSection() {
                 "Developed a lightweight RAG architecture parsing local data and OpenWeatherMap API",
                 "Integrated OpenCV for visual crop disease analysis via leaf scanning"
             ],
-            tech: ["React", "Django", "OpenRouter AI", "OpenCV", "Vercel"],
+            tech: ["React", "Django", "OpenRouter AI", "OpenCV", "Vercel", "Supabase", "Render"],
             github: "https://github.com/Emera80/Hackathon-Agritech",
             live: "https://agritech-frontend-tau.vercel.app/"
         },
@@ -82,8 +82,8 @@ export default function ProjectSection() {
 
     return (
 
-        <section id="projects" className="min-h-screen scroll-mt-35 bg-[#0A0A0A] flex items-center justify-center gap-40 w-full overflow-visible">
-            <div className=" bloc1 flex flex-col items-center justify-center text-9xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
+        <section id="projects" className="min-h-screen scroll-mt-45 bg-[#0A0A0A] flex items-center justify-center gap-40 w-full overflow-visible">
+            <div className=" bloc1 flex flex-col items-center justify-center text-8xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
                 {word.split("").map((letter, index) => (
                     <span key={index} className="-rotate-90 inline-block hover:text-[#c15525] transition-all duration-300 ease-in-out ">{letter}</span>
                 ))}
