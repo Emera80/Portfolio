@@ -46,8 +46,8 @@ Bienvenue sur le dépôt de mon portfolio personnel. Ce projet est une vitrine i
 
 ### 📥 Clonage et Installation
 ```bash
-git clone https://github.com/Emera80/portfolio.git
-cd portfolio
+git clone https://github.com/Emera80/Portfolio.git
+cd Portfolio
 npm install
 ```
 
