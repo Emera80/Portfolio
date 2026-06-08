@@ -2,7 +2,7 @@
 import "../index.css"
 import About from "../components/AboutSection";
 import Projects from "../components/ProjectSection";
-// import Contact from "../components/ContactSection";
+import Contact from "../components/ContactSection";
 import Navbar from "../components/Navbar";
 import Achievements from "../components/AchievementSection";
 import Hero from "../components/HeroSection";
@@ -39,7 +39,7 @@ export default function Porfolio() {
                 <Skills/>
                 <Projects/>
                 <Achievements/>
-            {/*    <Contact/>*/}
+                <Contact/>
             {/*    <Footer/>*/}
             </main>
         </div>
