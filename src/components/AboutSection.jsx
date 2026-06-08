@@ -14,38 +14,38 @@ export default function AboutSection() {
     return (
         <section
             id="about"
-            className="relative min-h-screen bg-[#0A0A0A] flex items-center w-full overflow-visible pt-30 gap-40"
+            className="relative min-h-screen bg-[#0A0A0A] flex flex-col lg:flex-row items-center w-full overflow-visible pt-20 lg:pt-30 gap-10 lg:gap-40 px-6 lg:px-0"
             >
-            <div className=" bloc1-1 flex flex-col items-center justify-center  text-8xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
+            <div className=" bloc1-1 hidden lg:flex flex-col items-center justify-center  text-8xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
                 {word.split("").map((letter, index) => (
                     <span key={index} className="-rotate-90 inline-block hover:text-[#c15525] transition-all duration-300 ease-in-out ">{letter}</span>
                 ))}
             </div>
-            <div className="flex flex-col gap-20  w-[90%] z-10">
+            <div className="flex flex-col gap-10 lg:gap-20 w-full lg:w-[90%] z-10">
                 <div className="box1 flex w-full ">
                     <div className=" bloc1-2  ">
-                        <div className="flex  gap-5">
-                            <div className=" bloc1-2-1 ">
+                        <div className="flex flex-col md:flex-row gap-5">
+                            <div className=" bloc1-2-1 hidden md:block">
                                 <h1 className="text-7xl font-bold text-neutral-900 uppercase tracking-wide">01</h1>
                             </div>
                             <div>
-                                <h2 className="text-[13px] translate-y-[-15%] tracking-[0.1rem] font-bold text-white border-2 border-solid border-[#c15525] inline-block px-3 py-1 uppercase">About</h2>
-                                <p className="text-white font-black text-7xl">BUILDING THINGS THAT <br/>  <span className="text-[#c15525]">MATTERS</span></p>
+                                <h2 className="text-[11px] md:text-[13px] translate-y-[-15%] tracking-[0.1rem] font-bold text-white border-2 border-solid border-[#c15525] inline-block px-3 py-1 uppercase mb-4 md:mb-0">About</h2>
+                                <p className="text-white font-black text-4xl md:text-7xl uppercase leading-tight">BUILDING THINGS THAT <br/> <span className="text-[#c15525]">MATTERS</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="box2" >
-                    <div className="bloc2-1 flex gap-40">
+                    <div className="bloc2-1 flex flex-col lg:flex-row gap-10 lg:gap-40">
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}      // Départ : transparent et 50px plus bas
                             whileInView={{ opacity: 1, y: 0 }}  // Arrivée : opaque et position d'origine
                             transition={{ duration: 0.8, ease: "easeOut" }} // "easeOut" rend le mouvement plus fluide
                             viewport={{ once: true, margin: "-100px" }}     // L'animation commence dès que le bloc est à moins de 100px du viewport
-                            className="bloc2-1-1 "
+                            className="bloc2-1-1 order-2 lg:order-1"
                         >
                             {aboutData.map((item, index) => (
-                                <div key={index} className="flex items-center gap-4 mb-8 border-2 border-solid border-white p-4 bg-[#0A0A0A] w-[350px] hover:translate-x-2 hover:scale-105 transition-all duration-300 ease-in-out">
+                                <div key={index} className="flex items-center gap-4 mb-4 md:mb-8 border-2 border-solid border-white p-4 bg-[#0A0A0A] w-full md:w-[350px] hover:translate-x-2 hover:scale-105 transition-all duration-300 ease-in-out">
                                     <div className="border-2 border-solid border-[#c15525] inline-block p-2 bg-[#0A0A0A]">
                                         {item.icon}
                                     </div>

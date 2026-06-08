@@ -35,13 +35,13 @@ export default function HeroSection() {
             {/* COUCHE 1 : Texte plein (Derrière la photo) */}
             {/* Ajustements : top-[62%] (plus bas) et text-[11vw] (plus petit) */}
             <div className="absolute top-[62%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none">
-                <h1 className="text-[11vw] font-black tracking-wide text-white uppercase leading-none">
+                <h1 className="text-[15vw] md:text-[11vw] font-black tracking-wide text-white uppercase leading-none">
                     EMERAUDE
                 </h1>
             </div>
 
             {/* COUCHE 2 : La Photo et ses voiles */}
-            <div className="relative z-10 h-[65vh] md:h-[75vh] flex items-end mt-10">
+            <div className="relative z-10 h-[55vh] md:h-[75vh] flex items-end mt-10">
                 <img
                     src={photohero}
                     alt="Photo de profil"
@@ -54,7 +54,7 @@ export default function HeroSection() {
             {/* COUCHE 3 : Texte Contour (Devant la photo) */}
             {/* Doit avoir EXACTEMENT les mêmes ajustements que la Couche 1 */}
             <div className="absolute top-[62%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-20 pointer-events-none">
-                <h1 className="text-[11vw] font-black tracking-wide text-transparent uppercase leading-none [-webkit-text-stroke:1.5px_white] md:[-webkit-text-stroke:2px_white]">
+                <h1 className="text-[15vw] md:text-[11vw] font-black tracking-wide text-transparent uppercase leading-none [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:2px_white]">
                     EMERAUDE
                 </h1>
             </div>
@@ -63,21 +63,32 @@ export default function HeroSection() {
                 LES CONTENUS LATÉRAUX (Textes & Bouton)
             ========================================= */}
             {/* Ajustement : Remplacement de 'items-center' par 'pt-32 pb-20' pour laisser les éléments respirer sur la hauteur */}
-            <div className="absolute inset-0 z-30 max-w-7xl mx-auto px-6 pointer-events-none flex flex-col md:flex-row justify-between pt-32 pb-20 md:py-24">
+            <div className="absolute inset-0 z-30 max-w-7xl mx-auto px-6 pointer-events-none flex flex-col md:flex-row justify-between pt-20 pb-10 md:pt-32 md:pb-20">
 
                 {/* BLOC DE GAUCHE */}
-                {/* Ajustement : Ajout de h-full et justify-center pour qu'il reste bien au milieu verticalement */}
-                <div className="pointer-events-auto flex flex-col items-start gap-4 justify-center h-full translate-y-[-20%] translate-x-[9%]">
-                    {/*<div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-neutral-300 font-medium">*/}
-                    {/*    <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>*/}
-                    {/*    Available for Work*/}
-                    {/*</div>*/}
-
-                    <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-                        Front-<span className="text-[#c15525]">End</span> &   <br />
-                        Back-<span className="text-[#c15525]">End</span> <br />
-                        Developer <br />
+                <div className="pointer-events-auto flex flex-col items-center md:items-start gap-4 justify-center h-auto md:h-full md:translate-y-[-20%] md:translate-x-[9%] mt-10 md:mt-0 text-center md:text-left">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white leading-tight">
+                        Front-<span className="text-[#c15525]">End</span> & <br className="hidden md:block" />
+                        Back-<span className="text-[#c15525]">End</span> <br className="hidden md:block" />
+                        Developer
                     </h2>
+                    {/* Bouton mobile uniquement */}
+                    <div className="md:hidden mt-4">
+                        <motion.a
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            href="/cv.pdf"
+                            className="group flex items-center gap-4 bg-[#8a3b18] text-white px-6 py-2.5 rounded-full font-bold text-sm border border-white/10 shadow-lg"
+                        >
+                            Resume
+                            <div className="bg-white text-[#8a3b18] w-6 h-6 rounded-full flex items-center justify-center group-hover:-rotate-45 transition-transform duration-300">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </motion.a>
+                    </div>
                 </div>
 
                 {/* BLOC DE DROITE */}

@@ -78,8 +78,8 @@ export default function Navbar() {
                 </div>
 
                 {/* Navigation */}
-                <nav className="hidden md:block">
-                    <ul className="flex gap-2 md:gap-4 text-[10px] md:text-xs font-medium uppercase tracking-[0.2em]">
+                <nav className="hidden lg:block">
+                    <ul className="flex gap-2 lg:gap-4 text-[10px] lg:text-xs font-medium uppercase tracking-[0.2em]">
                         {navLinks.map((link, index) => {
                             // On extrait le nom de l'ID depuis le chemin (ex: on transforme "#about" en "about")
                             const sectionId = link.path.replace('#', '');
@@ -107,7 +107,7 @@ export default function Navbar() {
                 {/* Bouton Menu Minimaliste */}
                 <button
                     onClick={toggleMenu}
-                    className="w-10 h-10 rounded-full md:hidden focus:outline-none bg-white/10 border border-white/20 flex flex-col items-center justify-center gap-[6px] hover:bg-white/20 transition-all duration-300 group overflow-hidden"
+                    className="w-10 h-10 rounded-full lg:hidden focus:outline-none bg-white/10 border border-white/20 flex flex-col items-center justify-center gap-[6px] hover:bg-white/20 transition-all duration-300 group overflow-hidden"
                 >
                     <motion.span
                         animate={isOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
@@ -126,13 +126,13 @@ export default function Navbar() {
             {/* Il est sorti du header. S'il est cliqué, il ferme le menu. */}
             {isOpen && (
                 <div
-                    className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 pointer-events-auto md:hidden"
+                    className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 pointer-events-auto lg:hidden"
                     onClick={closeMenu}
                 ></div>
             )}
             {/* 2. LE PANNEAU LATÉRAL MOBILE */}
             <div
-                className={`fixed top-0 right-0 h-screen w-64 bg-[#111111] border-l border-neutral-800/60 p-8 shadow-2xl transform transition-transform duration-300 ease-in-out z-40 pointer-events-auto md:hidden ${
+                className={`fixed top-0 right-0 h-screen w-64 bg-[#111111] border-l border-neutral-800/60 p-8 shadow-2xl transform transition-transform duration-300 ease-in-out z-40 pointer-events-auto lg:hidden ${
                     isOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}
             >

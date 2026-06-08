@@ -68,30 +68,30 @@ export default function SkillSection() {
         ]
     };
     return (
-        <section id="skills" className="min-h-screen scroll-mt-10 bg-[#0A0A0A] flex items-center justify-center w-full overflow-visible gap-40 ">
-            <div className=" bloc1 flex flex-col items-center justify-center text-8xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
+        <section id="skills" className="min-h-screen scroll-mt-10 bg-[#0A0A0A] flex flex-col lg:flex-row items-center justify-center w-full overflow-visible gap-10 lg:gap-40 px-6 lg:px-0 pt-20 lg:pt-0">
+            <div className=" bloc1 hidden lg:flex flex-col items-center justify-center text-8xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
                 {word.split("").map((letter, index) => (
                     <span key={index} className="-rotate-90 inline-block hover:text-[#c15525] transition-all duration-300 ease-in-out ">{letter}</span>
                 ))}
             </div>
-            <div className=" bloc2 flex flex-col gap-30  w-[90%] z-10">
+            <div className=" bloc2 flex flex-col gap-10 lg:gap-30 w-full lg:w-[90%] z-10">
                 <div className="bloc2-1 flex w-full ">
-                    <div className=" bloc2-11 mb-40  ">
-                        <div className="flex  gap-5">
-                            <div className=" bloc1-2-1 ">
+                    <div className=" bloc2-11 mb-10 lg:mb-40  ">
+                        <div className="flex flex-col md:flex-row gap-5">
+                            <div className=" bloc1-2-1 hidden md:block">
                                 <h1 className="text-7xl font-bold text-neutral-900 uppercase tracking-wide">02</h1>
                             </div>
                             <div>
-                                <h2 className="text-[13px] translate-y-[-15%] tracking-[0.1rem] font-bold text-white border-2 border-solid border-[#c15525] inline-block px-3 py-1 uppercase">Skills</h2>
-                                <p className="text-white font-black text-7xl">TECHNOLOGIES I  <span className="text-[#c15525]">WORK<br/></span> WITH</p>
+                                <h2 className="text-[11px] md:text-[13px] translate-y-[-15%] tracking-[0.1rem] font-bold text-white border-2 border-solid border-[#c15525] inline-block px-3 py-1 uppercase mb-4 md:mb-0">Skills</h2>
+                                <p className="text-white font-black text-4xl md:text-7xl uppercase leading-tight">TECHNOLOGIES I  <span className="text-[#c15525]">WORK<br className="hidden md:block" /></span> WITH</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="bloc2-2 flex translate-y-[-40%] gap-40" >
-                    <div className="bloc2-21 flex flex-col gap-7 items-start">
+                <div className="bloc2-2 flex flex-col lg:flex-row lg:translate-y-[-40%] gap-10 lg:gap-40" >
+                    <div className="bloc2-21 flex flex-row lg:flex-col gap-3 lg:gap-7 items-start overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 hide-scrollbar">
                         {categoriesMenu.map((cat) => (
-                            <button key={cat} onClick={() => setActiveCategory(cat)} className={`w-full text-left px-6 py-4 font-bold tracking-widest uppercase transition-all duration-300 border-l-2 ${
+                            <button key={cat} onClick={() => setActiveCategory(cat)} className={`whitespace-nowrap lg:w-full text-left px-4 lg:px-6 py-2 lg:py-4 font-bold tracking-widest uppercase transition-all duration-300 border-b-2 lg:border-b-0 lg:border-l-2 ${
                                 activeCategory === cat
                                     ? 'text-orange-500 border-orange-500 bg-gradient-to-r from-orange-500/10 to-transparent'
                                     : 'text-neutral-500 border-transparent hover:text-white hover:border-white/20'

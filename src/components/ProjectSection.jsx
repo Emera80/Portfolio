@@ -82,35 +82,35 @@ export default function ProjectSection() {
 
     return (
 
-        <section id="projects" className="min-h-screen scroll-mt-45 bg-[#0A0A0A] flex items-center justify-center gap-40 w-full overflow-visible">
-            <div className=" bloc1 flex flex-col items-center justify-center text-8xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
+        <section id="projects" className="min-h-screen scroll-mt-20 lg:scroll-mt-45 bg-[#0A0A0A] flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-40 w-full overflow-visible px-6 lg:px-0 pt-20 lg:pt-0">
+            <div className=" bloc1 hidden lg:flex flex-col items-center justify-center text-8xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
                 {word.split("").map((letter, index) => (
                     <span key={index} className="-rotate-90 inline-block hover:text-[#c15525] transition-all duration-300 ease-in-out ">{letter}</span>
                 ))}
             </div>
-            <div className=" bloc2 flex flex-col gap-10  w-[90%] z-10">
+            <div className=" bloc2 flex flex-col gap-10 w-full lg:w-[90%] z-10">
                 <div className="box1 flex flex-col w-full ">
-                    <div className=" box1-2 translate-y-[-40%] ">
-                        <div className="flex  gap-5">
-                            <div className=" bloc1-2-1 ">
+                    <div className=" box1-2 lg:translate-y-[-40%] ">
+                        <div className="flex flex-col md:flex-row gap-5">
+                            <div className=" bloc1-2-1 hidden md:block">
                                 <h1 className="text-7xl font-bold text-neutral-900 uppercase tracking-wide">03</h1>
                             </div>
                             <div>
-                                <h2 className="text-[13px] translate-y-[-15%] tracking-[0.1rem] font-bold text-white border-2 border-solid border-[#c15525] inline-block px-3 py-1 uppercase">Projects</h2>
-                                <p className="text-white font-black text-7xl">A SMALL SET OF THINGS I'M<br/>  <span className="text-[#c15525]">PROUD </span>TO HAVE BUILT</p>
+                                <h2 className="text-[11px] md:text-[13px] translate-y-[-15%] tracking-[0.1rem] font-bold text-white border-2 border-solid border-[#c15525] inline-block px-3 py-1 uppercase mb-4 md:mb-0">Projects</h2>
+                                <p className="text-white font-black text-4xl md:text-7xl uppercase leading-tight">A SMALL SET OF THINGS I'M<br className="hidden md:block" /> <span className="text-[#c15525]">PROUD </span>TO HAVE BUILT</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="box2 max-w-7xl  px-6 w-full ">
+                <div className="box2 max-w-7xl w-full ">
                     {/* EN-TÊTE : Titre et Boutons de navigation */}
-                    <div className="flex justify-between items-end mb-12">
+                    <div className="flex justify-between items-end mb-8 md:mb-12">
                         <div>
-                            <p className="text-neutral-400 mt-2">Swipe to explore my recent work.</p>
+                            <p className="text-neutral-400 mt-2 text-sm md:text-base">Swipe to explore my recent work.</p>
                         </div>
 
-                        {/* Boutons Gauche / Droite */}
-                        <div className="flex gap-4">
+                        {/* Boutons Gauche / Droite - Masqués sur mobile car on peut swipe */}
+                        <div className="hidden md:flex gap-4">
                             <button onClick={() => scroll('left')} className="p-3 rounded-full bg-white/5 border border-white/10 hover:bg-orange-500 hover:text-white transition-all text-neutral-400">
                                 <FiChevronLeft size={24} />
                             </button>

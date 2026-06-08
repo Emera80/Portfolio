@@ -31,27 +31,27 @@ export default function AchievementSection() {
     ]
 
     return (
-        <section id="awards" className="min-h-screen scroll-mt-10 bg-[#0A0A0A] flex items-center justify-center gap-40 pt-30 w-full overflow-visible">
-            <div className=" bloc1 flex flex-col items-center justify-center  text-8xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
+        <section id="awards" className="min-h-screen scroll-mt-20 bg-[#0A0A0A] flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-40 pt-20 lg:pt-30 w-full overflow-visible px-6 lg:px-0">
+            <div className=" bloc1 hidden lg:flex flex-col items-center justify-center  text-8xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
                 {word.split("").map((letter, index) => (
                     <span key={index} className="-rotate-90 inline-block hover:text-[#c15525] transition-all duration-300 ease-in-out ">{letter}</span>
                 ))}
             </div>
-            <div className=" bloc2 flex flex-col gap-10  w-[90%] z-10">
+            <div className=" bloc2 flex flex-col gap-10 w-full lg:w-[90%] z-10">
                 <div className="box1 flex flex-col w-full ">
-                    <div className=" box1-2 translate-y-[-40%] ">
-                        <div className="flex  gap-5">
-                            <div className=" bloc1-2-1 ">
+                    <div className=" box1-2 lg:translate-y-[-40%] ">
+                        <div className="flex flex-col md:flex-row gap-5">
+                            <div className=" bloc1-2-1 hidden md:block">
                                 <h1 className="text-7xl font-bold text-neutral-900 uppercase tracking-wide">04</h1>
                             </div>
                             <div>
-                                <h2 className="text-[13px] translate-y-[-15%] tracking-[0.1rem] font-bold text-white border-2 border-solid border-[#c15525] inline-block px-3 py-1 uppercase">Awards & Certifications</h2>
-                                <p className="text-white font-black text-7xl">PROOF OF MY PASSION BEYOND<br/>THE<span className="text-[#c15525]"> CLASSROOM</span></p>
+                                <h2 className="text-[11px] md:text-[13px] translate-y-[-15%] tracking-[0.1rem] font-bold text-white border-2 border-solid border-[#c15525] inline-block px-3 py-1 uppercase mb-4 md:mb-0">Awards & Certifications</h2>
+                                <p className="text-white font-black text-4xl md:text-7xl uppercase leading-tight">PROOF OF MY PASSION BEYOND<br className="hidden md:block" /> THE <span className="text-[#c15525]">CLASSROOM</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="max-w-4xl">
+                <div className="max-w-4xl w-full">
                     {/* EN-TÊTE DE LA SECTION */}
 
                     {/* CONTENEUR DE LA TIMELINE */}
