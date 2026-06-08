@@ -14,14 +14,14 @@ export default function AboutSection() {
     return (
         <section
             id="about"
-            className="relative min-h-screen bg-[#0A0A0A] flex items-center w-full overflow-hidden pt-30 gap-40"
+            className="relative min-h-screen bg-[#0A0A0A] flex items-center w-full overflow-visible pt-30 gap-40"
             >
-            <div className=" bloc1-1 flex flex-col items-center justify-center gap-1 text-9xl font-bold text-neutral-900 uppercase tracking-wider w-[10%]">
+            <div className=" bloc1-1 flex flex-col items-center justify-center  text-9xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
                 {word.split("").map((letter, index) => (
                     <span key={index} className="-rotate-90 inline-block hover:text-[#c15525] transition-all duration-300 ease-in-out ">{letter}</span>
                 ))}
             </div>
-            <div className="flex flex-col gap-20  w-[90%] ">
+            <div className="flex flex-col gap-20  w-[90%] z-10">
                 <div className="box1 flex w-full ">
                     <div className=" bloc1-2  ">
                         <div className="flex  gap-5">

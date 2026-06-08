@@ -1,7 +1,7 @@
 //import React from "react";
 import "../index.css"
 import About from "../components/AboutSection";
-// import Projects from "../components/ProjectSection";
+import Projects from "../components/ProjectSection";
 // import Contact from "../components/ContactSection";
 import Navbar from "../components/Navbar";
 // import Achievements from "../components/AchievementSection";
@@ -38,7 +38,7 @@ export default function Porfolio() {
                 <Hero/>
                 <About/>
                 <Skills/>
-            {/*    <Projects/>*/}
+                <Projects/>
             {/*    <Education/>*/}
             {/*    <Achievements/>*/}
             {/*    <Contact/>*/}

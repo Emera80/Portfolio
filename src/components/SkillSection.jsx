@@ -68,15 +68,15 @@ export default function SkillSection() {
         ]
     };
     return (
-        <section id="skills" className="min-h-screen bg-[#0A0A0A] flex items-center justify-center w-full overflow-hidden gap-40">
-            <div className=" bloc1 flex flex-col items-center justify-center gap-1 text-9xl font-bold text-neutral-900 uppercase tracking-wider w-[10%]">
+        <section id="skills" className="min-h-screen scroll-mt-10 bg-[#0A0A0A] flex items-center justify-center w-full overflow-visible gap-40 ">
+            <div className=" bloc1 flex flex-col items-center justify-center text-9xl font-bold text-neutral-900 uppercase tracking-normal w-[10%]">
                 {word.split("").map((letter, index) => (
                     <span key={index} className="-rotate-90 inline-block hover:text-[#c15525] transition-all duration-300 ease-in-out ">{letter}</span>
                 ))}
             </div>
-            <div className=" bloc2 flex flex-col gap-30  w-[90%] ">
+            <div className=" bloc2 flex flex-col gap-30  w-[90%] z-10">
                 <div className="bloc2-1 flex w-full ">
-                    <div className=" bloc2-11  ">
+                    <div className=" bloc2-11 mb-40  ">
                         <div className="flex  gap-5">
                             <div className=" bloc1-2-1 ">
                                 <h1 className="text-7xl font-bold text-neutral-900 uppercase tracking-wide">02</h1>
@@ -88,7 +88,7 @@ export default function SkillSection() {
                         </div>
                     </div>
                 </div>
-                <div className="bloc2-2 flex gap-40" >
+                <div className="bloc2-2 flex translate-y-[-40%] gap-40" >
                     <div className="bloc2-21 flex flex-col gap-7 items-start">
                         {categoriesMenu.map((cat) => (
                             <button key={cat} onClick={() => setActiveCategory(cat)} className={`w-full text-left px-6 py-4 font-bold tracking-widest uppercase transition-all duration-300 border-l-2 ${
