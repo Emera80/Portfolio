@@ -116,7 +116,7 @@ export default function HeroSection() {
                         <motion.a
                             whileHover={{ scale: 1.05 }} // Grossit de 5% au survol
                             whileTap={{ scale: 0.95 }}   // Rétrécit un peu au clic (effet bouton physique)
-                            href="/cv.pdf"
+                            href="/CV_Emeraude_TSHIYOYO_FR.pdf" download="CV_Emeraude_TSHIYOYO_FR.pdf"
                             className="group flex items-center gap-4 bg-[#8a3b18] hover:bg-[#c15525] text-white px-6 py-2.5 rounded-full font-bold text-1xl transition-all duration-300 border border-white/10 shadow-lg mt-2"
                         >
                             Resume
