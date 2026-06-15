@@ -1,4 +1,3 @@
-
 import {
     SiReact,
     SiTailwindcss,
@@ -16,7 +15,7 @@ import {
     SiGithub,
     SiRender,
     SiVercel,
-    SiNodedotjs,
+    SiFastapi,
     SiUpstash,
     SiJetbrains
 } from "react-icons/si";
@@ -46,7 +45,7 @@ export default function SkillSection() {
         backend: [
             { name: "Python", icon: <SiPython color="#3776AB" /> },
             { name: "Django", icon: <SiDjango color="#092E20" /> },
-            { name: "Node.js", icon: <SiNodedotjs color="#339933" /> },
+            { name: "FastAPI", icon: <SiFastapi color="#05998B" /> },
             { name: "Java", icon: <LiaJava color="#ED8B00" /> },
         ],
         database: [
