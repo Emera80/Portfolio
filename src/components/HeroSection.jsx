@@ -8,6 +8,7 @@ export default function HeroSection() {
 
 
     const [isScrolled, setIsScrolled] = useState(false);
+    const [showResumeMenu, setShowResumeMenu] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -73,11 +74,9 @@ export default function HeroSection() {
                         Developer
                     </h2>
                     {/* Bouton mobile uniquement */}
-                    <div className="md:hidden mt-4">
-                        <motion.a
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            href="/CV_Emeraude_TSHIYOYO_EN.pdf" download="CV_Emeraude_TSHIYOYO_EN.pdf"
+                    <div className="md:hidden mt-4 relative z-50">
+                        <button
+                            onClick={() => setShowResumeMenu(!showResumeMenu)}
                             className="group flex items-center gap-4 bg-[#8a3b18] text-white px-6 py-2.5 rounded-full font-bold text-sm border border-white/10 shadow-lg"
                         >
                             Resume
@@ -87,7 +86,13 @@ export default function HeroSection() {
                                     <path d="m12 5 7 7-7 7"></path>
                                 </svg>
                             </div>
-                        </motion.a>
+                        </button>
+                        {showResumeMenu && (
+                            <div className="absolute top-full left-0 mt-2 w-32 bg-white dark:bg-[#1A1A1A] rounded-lg shadow-xl py-2 z-50 flex flex-col items-center gap-2 border border-white/10">
+                                <a href="/CV_Emeraude_TSHIYOYO_FR.pdf" download="CV_Emeraude_TSHIYOYO_FR.pdf" className="text-sm text-black dark:text-white hover:text-[#c15525]">FR</a>
+                                <a href="/CV_Emeraude_TSHIYOYO_EN.pdf" download="CV_Emeraude_TSHIYOYO_EN.pdf" className="text-sm text-black dark:text-white hover:text-[#c15525]">EN</a>
+                            </div>
+                        )}
                     </div>
                 </div>
 
@@ -113,20 +118,26 @@ export default function HeroSection() {
                             </p>
                         </div>
 
-                        <motion.a
-                            whileHover={{ scale: 1.05 }} // Grossit de 5% au survol
-                            whileTap={{ scale: 0.95 }}   // Rétrécit un peu au clic (effet bouton physique)
-                            href="/CV_Emeraude_TSHIYOYO_EN.pdf" download="CV_Emeraude_TSHIYOYO_EN.pdf"
-                            className="group flex items-center gap-4 bg-[#8a3b18] hover:bg-[#c15525] text-white px-6 py-2.5 rounded-full font-bold text-1xl transition-all duration-300 border border-white/10 shadow-lg mt-2"
-                        >
-                            Resume
-                            <div className="bg-white text-[#8a3b18] w-7 h-7 rounded-full flex items-center justify-center group-hover:-rotate-45 transition-transform duration-300">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M5 12h14"></path>
-                                    <path d="m12 5 7 7-7 7"></path>
-                                </svg>
-                            </div>
-                        </motion.a>
+                        <div className="relative z-50">
+                            <button
+                                onClick={() => setShowResumeMenu(!showResumeMenu)}
+                                className="group flex items-center gap-4 bg-[#8a3b18] hover:bg-[#c15525] text-white px-6 py-2.5 rounded-full font-bold text-1xl transition-all duration-300 border border-white/10 shadow-lg mt-2"
+                            >
+                                Resume
+                                <div className="bg-white text-[#8a3b18] w-7 h-7 rounded-full flex items-center justify-center group-hover:-rotate-45 transition-transform duration-300">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            {showResumeMenu && (
+                                <div className="absolute bottom-full right-0 mb-2 w-32 bg-white dark:bg-[#1A1A1A] rounded-lg shadow-xl py-2 z-50 flex flex-col items-center gap-2 border border-white/10">
+                                    <a href="/CV_Emeraude_TSHIYOYO_FR.pdf" download="CV_Emeraude_TSHIYOYO_FR.pdf" className="text-sm text-black dark:text-white hover:text-[#c15525]">FR</a>
+                                    <a href="/CV_Emeraude_TSHIYOYO_EN.pdf" download="CV_Emeraude_TSHIYOYO_EN.pdf" className="text-sm text-black dark:text-white hover:text-[#c15525]">EN</a>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
