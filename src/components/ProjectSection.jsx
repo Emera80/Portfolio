@@ -61,7 +61,7 @@ export default function ProjectSection() {
             ],
             tech: ["Python", "Django", "Pillow", "Cloudinary", "Render"],
             github: "https://github.com/Emera80/StudentCard-Generator",
-            live: "https://studentcard-generator.onrender.com"
+            live: "https://emera4672-studentcard-generator.hf.space"
         },
         {
             id: 4,
